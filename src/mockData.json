@@ -1,0 +1,10 @@
+{
+  "dashboard": [
+    { "id": 1, "name": "ReactJS", "type": "Course", "status": "Published", "time": "5 hours ago" },
+    { "id": 2, "name": "VueJS", "type": "Course", "status": "Published", "time": "5 hours ago" }
+  ],
+  "content": [
+    { "id": 1, "name": "ReactJS", "price": 3000, "desc": "Học React qua video", "status": "Published" },
+    { "id": 3, "name": "VueJS", "price": 350, "desc": "Học VueJS qua video", "status": "Published" }
+  ]
+}

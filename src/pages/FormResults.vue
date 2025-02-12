@@ -25,28 +25,28 @@ const groupedResults = computed(() => {
 });
 </script>
 <template>
-  <div class="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg">
-    <div v-for="(group, workspace) in groupedResults" :key="workspace" class="mb-6 p-4 border rounded-lg bg-gray-50 shadow">
-      <h3 class="text-lg font-semibold mb-2 text-gray-700">{{ workspace }}</h3>
+  <div class="p-6 max-w-4xl mx-auto text-white rounded-lg">
+    <div v-for="(group, workspace) in groupedResults" :key="workspace" class="mb-6 p-4  rounded-lg ">
+      <h3 class="text-lg font-semibold mb-2 ">{{ workspace }}</h3>
       <div class="overflow-x-auto">
-        <table class="w-full border-collapse border border-gray-300 rounded-lg shadow-sm">
+        <table class="w-full bg-[#212134] rounded-lg">
           <thead>
-            <tr class="bg-blue-500 text-white">
-              <th class="p-3 border border-gray-300">Id</th>
-              <th v-for="field in store.workspaces[workspace]" :key="field.id" class="p-3 border border-gray-300">
+            <tr class=" text-white">
+              <th class="p-3 border border-gray-700">Id</th>
+              <th v-for="field in store.workspaces[workspace]" :key="field.id" class="p-3 border border-gray-700">
                 {{ field.label }}
               </th>
-              <th class="p-3 border border-gray-300">Hành động</th>
+              <th class="p-3 border border-gray-700">Hành động</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(row, index) in group" :key="index" class="bg-white hover:bg-gray-100 border-t border-gray-300 text-center">
-              <td class="p-3 border border-gray-300">{{ index + 1 }}</td>
-              <td v-for="field in store.workspaces[workspace]" :key="field.id" class="p-3 border border-gray-300">
+            <tr v-for="(row, index) in group" :key="index" class=" border-t border-gray-700 text-center">
+              <td class="p-3 border border-gray-700">{{ index + 1 }}</td>
+              <td v-for="field in store.workspaces[workspace]" :key="field.id" class="p-3 border border-gray-700">
                 {{ row.data[field.id] || '—' }}
               </td>
-              <td class="p-3 border border-gray-300">
-                <button @click="editForm(row)" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2">
+              <td class="p-3 border border-gray-700">
+                <button @click="editForm(row)" class=" text-white px-4 py-2 rounded-lg  flex items-center gap-2">
                   <i class="pi pi-pencil"></i>
                   Sửa
                 </button>

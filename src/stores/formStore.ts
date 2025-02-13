@@ -41,6 +41,12 @@ export const useFormStore = defineStore('formStore', () => {
     });
   };
 
+  const addFieldToWorkspace = (field: { name: string; type: string }) {
+    if (currentWorkspace.value) {
+      workspaces.value[currentWorkspace.value].push(field)
+    }
+  },
+
   // Xóa field khỏi workspace
   const removeField = (index: number) => {
     if (!currentWorkspace.value) return;
